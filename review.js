@@ -1,4 +1,4 @@
-const reviews = [
+const review = [
 "Bhai, Laxman Nagar se Aliya Pair li from HK Factory Outlet, sab kuch latest colection me hai, unique design aur perfect he Wedding Gown ke liye.  Aajkal sab yahin se le rahe hain.",
 "Bhai, Laxman Nagar se Aliya Pair li from VethiQ Luxury, quality bhi zabardast hai, stylish aur perfect he Women Fashion ke liye. 😍 Full paisa vasool.",
 "Bhai, Laxman Nagar se Co-ord Set liya from VethiQ Luxury, price bhi ekdum hu sahi he, affordable aur perfect he Women Fashion ke liye. 💃 Mummy ko bhi pasand aayi.",
@@ -503,7 +503,7 @@ const reviews = [
 
 // ✅ Select random review
 function getRandomReview() {
-  return reviews[Math.floor(Math.random() * reviews.length)];
+  return review[Math.floor(Math.random() * review.length)];
 }
 
 // ✅ Load review into textarea
