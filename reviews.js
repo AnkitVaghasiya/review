@@ -500,3 +500,43 @@ const reviews = [
 "Yaar, su collection che, Varachha mathi Pant Pair lidhi from HK Factory Outlet, shop ni vibe kyk alag j che, khub comfort che ane Ethnic Wear mate ekdam perfect. 👌 Full paisa vasool.",
 "Yaar, su collection che, Varachha mathi Tunic lidhu from VethiQ Luxury, quality pan best che, sasta ane Designer Palazzo mate ekdam perfect.  Full paisa vasool.",
 ];
+
+// ✅ Select random review
+function getRandomReview() {
+  return reviews[Math.floor(Math.random() * reviews.length)];
+}
+
+// ✅ Load review into textarea
+function loadReview() {
+  const textarea = document.getElementById('reviewText');
+  textarea.value = getRandomReview();
+}
+
+// ✅ Copy to clipboard and redirect to Google review
+function copyAndRedirect() {
+  const reviewText = document.getElementById("reviewText").value;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(reviewText).then(() => {
+      window.open("https://g.page/r/CQL6YaZ4hugaEAE/review", "_blank");
+    }).catch(() => {
+      fallbackCopy(reviewText);
+    });
+  } else {
+    fallbackCopy(reviewText);
+  }
+}
+
+// ✅ Fallback for older browsers
+function fallbackCopy(text) {
+  const textArea = document.createElement("textarea");
+  textArea.value = text;
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textArea);
+  window.open("https://g.page/r/CQL6YaZ4hugaEAE/review", "_blank");
+}
+
+// ✅ Make sure DOM is ready before loading review
+window.addEventListener('DOMContentLoaded', loadReview);
