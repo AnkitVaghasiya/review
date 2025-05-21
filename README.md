@@ -1,1 +1,1 @@
-reviews.js file ko hi hamesha change karni he aur kuch nahi.
+reviews.js file ko hamesha rewrite hi karni he aur kuch nahi.
