@@ -1,88 +1,54 @@
 <!DOCTYPE html>
 <html lang="gu">
 <head>
-    <meta charset="utf-8"/>
-    <title>HK Factory Outlet (VethiQ) &amp; HK Fashion (MUKALAL)</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            padding: 20px;
-            text-align: center;
-            background: linear-gradient(to right, #f5f7fa, #c3cfe2);
-        }
-        h1 {
-            font-size: 28px;
-            font-weight: bold;
-            background: linear-gradient(to right, #2b5876, #4e4376);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        textarea {
-            width: 90%;
-            height: 120px;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 12px;
-            resize: none;
-            margin: 20px auto;
-            display: block;
-            border-radius: 10px;
-            border: 2px solid #666;
-        }
-        button {
-            padding: 12px 25px;
-            font-size: 16px;
-            border: none;
-            border-radius: 8px;
-            background-color: #00796b;
-            color: white;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #004d40;
-        }
-    </style>
+  <meta charset="utf-8"/>
+  <title>HK Factory Outlet Outlet (VethiQ) &amp; HK Fashion (MUKALAL)</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      text-align: center;
+      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: bold;
+      background: linear-gradient(to right, #2b5876, #4e4376);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    textarea {
+      width: 90%;
+      height: 120px;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 12px;
+      resize: none;
+      margin: 20px auto;
+      display: block;
+      border-radius: 10px;
+      border: 2px solid #666;
+    }
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #00796b;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #004d40;
+    }
+  </style>
 </head>
-<body style="text-align: center; padding-top: 120px; display: flex; flex-direction: column; align-items: center; min-height: 100vh;">
-    <textarea id="reviewText" readonly="" style="font-size: 30px">રીવ્યુ લોડ થઇ રહ્યો છે...</textarea><br/>
-    <button onclick="copyAndRedirect()">✂️ રિવ્યુ કોપી કરો અને Google ખોલો</button>
-    
-    <script src="reviews.js"></script> <!-- Load the reviews.js file -->
-    <script>
-        function getRandomReview() {
-            return reviews[Math.floor(Math.random() * reviews.length)];
-        }
+<body>
+  <h1>HK Factory Outlet Outlet (VethiQ) &amp; HK Fashion (MUKALAL)</h1>
+  <textarea id="reviewText" readonly style="font-size: 30px;">રીવ્યુ લોડ થઇ રહ્યો છે...</textarea><br/>
+  <button onclick="copyAndRedirect()">✂️ રિવ્યુ કોપી કરો અને Google ખોલો</button>
 
-        function loadReview() {
-            const textarea = document.getElementById('reviewText');
-            textarea.value = getRandomReview();
-        }
-
-        function copyAndRedirect() {
-            const reviewText = document.getElementById("reviewText").value;
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(reviewText).then(() => {
-                    window.open("https://g.page/r/CQL6YaZ4hugaEAE/review", "_blank");
-                }).catch(() => {
-                    fallbackCopy(reviewText);
-                });
-            } else {
-                fallbackCopy(reviewText);
-            }
-        }
-
-        function fallbackCopy(text) {
-            const textArea = document.createElement("textarea");
-            textArea.value = text;
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            document.execCommand("copy");
-            document.body.removeChild(textArea);
-            window.open("https://g.page/r/CQL6YaZ4hugaE/review", "_blank");
-        }
-
-        window.onload = loadReview;
-    </script>
+  <!-- External JavaScript file -->
+  <script src="reviews.js"></script>
 </body>
 </html>
