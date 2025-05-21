@@ -15,40 +15,66 @@
       --shadow: 0 2px 12px rgba(0,0,0,0.2);
     }
     html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
       background: var(--bg-main);
       color: var(--text-main);
-      font-family: 'Segoe UI', 'Inter', Arial, sans-serif;
+      font-family: 'Noto Sans Gujarati', 'Anek Gujarati', 'Segoe UI', Arial, sans-serif;
       min-height: 100vh;
+      width: 100vw;
+    }
+    body {
+      min-height: 100vh;
+      min-width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     header {
+      width: 100%;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      padding: 16px 24px;
-      background: #202020;
-      box-shadow: var(--shadow);
+      justify-content: center;
+      padding: 24px 0 0 0;
+      background: transparent;
+      box-shadow: none;
     }
     .brand-logo {
-      height: 40px;
+      height: 56px;
       width: auto;
-      margin-right: 18px;
+      margin-bottom: 10px;
     }
     .brand-title {
-      font-size: 1.35rem;
+      font-size: 1.5rem;
       font-weight: 600;
       letter-spacing: 0.5px;
+      text-align: center;
+      margin-bottom: 10px;
     }
     main {
-      max-width: 480px;
-      margin: 40px auto 0 auto;
+      width: 100%;
+      max-width: 420px;
       background: var(--bg-card);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 32px 24px 24px 24px;
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 28px;
+      margin-top: 18px;
+      margin-bottom: 18px;
     }
     .star-rating {
       font-size: 2.5rem;
@@ -57,32 +83,29 @@
       text-align: center;
       margin-bottom: 10px;
     }
-    .loading {
-      color: var(--text-muted);
-      text-align: center;
-      font-size: 1.1rem;
-    }
     .review-section {
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 12px;
       margin-top: 10px;
     }
-    .review-text {
+    .review-textarea {
       background: #181818;
       color: var(--text-main);
       border-radius: 8px;
       padding: 18px 16px;
       font-size: 1.07rem;
-      text-align: center;
-      margin-bottom: 8px;
-      word-break: break-word;
+      font-family: inherit;
       border: 1px solid #292929;
-      min-height: 48px;
+      min-height: 64px;
       width: 100%;
       box-sizing: border-box;
+      resize: none;
+      margin-bottom: 8px;
       user-select: text;
+      text-align: center;
     }
     .copy-btn {
       background: var(--accent);
@@ -95,6 +118,9 @@
       cursor: pointer;
       transition: background 0.2s;
       margin-bottom: 6px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
     .copy-btn:hover {
       background: #ffa000;
@@ -105,35 +131,42 @@
       text-align: center;
     }
     @media (max-width: 600px) {
-      header, main {
-        padding: 12px;
-      }
-      main {
-        padding: 18px 8px 14px 8px;
+      .brand-logo {
+        height: 38px;
       }
       .brand-title {
         font-size: 1.05rem;
       }
+      main {
+        max-width: 98vw;
+        padding: 14px 4vw 14px 4vw;
+      }
       .star-rating {
         font-size: 2rem;
       }
+      .review-textarea {
+        font-size: 0.98rem;
+        padding: 12px 6px;
+      }
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <img src="VETHIQ-FINAL-LOGO_6-PNG-FILE-white.jpg" alt="Brand Logo" class="brand-logo" />
-    <span class="brand-title">HK Factory Outlet (VethiQ) & HK Fashion (MUKALAL)</span>
-  </header>
-  <main>
-    <div class="star-rating">★★★★★</div>
-    <div class="loading" id="loading">રીવ્યુ લોડ થઇ રહ્યો છે...</div>
-    <div class="review-section" style="display:none" id="reviewSection">
-      <div class="review-text" id="reviewText"></div>
-      <button class="copy-btn" onclick="copyReview()">✂️ રિવ્યુ કોપી કરો</button>
-      <div class="instruction">અને Google ખોલો</div>
-    </div>
-  </main>
+  <div class="container">
+    <header>
+      <img src="VETHIQ-FINAL-LOGO_6-PNG-FILE-white.jpg" alt="Brand Logo" class="brand-logo" />
+      <span class="brand-title">HK Factory Outlet (VethiQ) & HK Fashion (MUKALAL)</span>
+    </header>
+    <main>
+      <div class="star-rating">★★★★★</div>
+      <div class="review-section">
+        <textarea class="review-textarea" id="reviewText" readonly></textarea>
+        <button class="copy-btn" onclick="copyAndRedirect()">✂️ રિવ્યુ કોપી કરો અને Google ખોલો</button>
+        <div class="instruction">Google રિવ્યુ પેજ પર જઇને Paste કરો</div>
+      </div>
+    </main>
+  </div>
   <script src="review.js"></script>
 </body>
 </html>
