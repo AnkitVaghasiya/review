@@ -29,9 +29,9 @@
     }
 
     .container {
-      width: 100%;
-      max-width: 550px;
-      padding: 20px;
+      width: 105%;
+      max-width: 480px;
+      padding: 5px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -46,10 +46,10 @@
     }
 
     .brand-logo {
-      max-width: 260px;
+      max-width: 210px;
       width: 100%;
       height: auto;
-      margin-bottom: -40px;
+      margin-bottom: 10px;
       margin-top: -40px;
     }
 
@@ -69,36 +69,44 @@
     }
 
     main {
-      width: 100%;
+      width: 150%;
       background: var(--bg-card);
       border-radius: var(--radius);
-      padding: 20px;
+      padding: 10px;
       box-shadow: var(--shadow);
       display: flex;
+      justify-content: center;
       flex-direction: column;
-      gap: 18px;
+      gap: 5px;
     }
 
     .star-rating {
-      margin-top: -20px;
+      margin-top: -15px;
       margin-bottom: -10px;
       font-size: 2.8rem;
       color: var(--accent);
       letter-spacing: 2px;
+      margin-left: auto;
+      margin-right: auto; /* Centers the textarea horizontally */
     }
 
     .review-textarea {
+      margin-top: 10px;
+      display: block;
       width: 100%;
+      max-width: 480px; /* Matches the container's max-width */
       background: #121212;
       color: var(--text-main);
       font-size: 1.05rem;
       border-radius: 10px;
       border: 1px solid #333;
-      padding: 16px;
+      padding: 10px;
       resize: none;
       overflow-y: hidden;
       box-sizing: border-box;
       transition: all 0.2s ease;
+      margin-left: auto;
+      margin-right: auto; /* Centers the textarea horizontally */
     }
 
     .copy-btn {
@@ -107,12 +115,18 @@
       border: none;
       border-radius: 8px;
       margin-top: 10px;
-      padding: 12px 24px;
-      font-size: 1.1rem;
+      padding: 10px 20px;
+      font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      width: fit-content;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      margin-left: auto;
+      margin-right: auto; /* Centers the textarea horizontally */
     }
 
     .copy-btn:hover {
@@ -126,7 +140,7 @@
       margin-top: 20px;
     }
 
-    @media (max-width: 550px) {
+    @media (max-width: 480px) {
       .brand-title .line {
         font-size: 1.1rem;
       }
@@ -154,8 +168,9 @@
       <div class="star-rating">★★★★★</div>
       <textarea class="review-textarea" id="reviewText" readonly></textarea>
       <button class="copy-btn" onclick="copyAndRedirect()">Copy & Leave Review</button>
-      <div class="instruction">Leave us a Positive Review ❤️</div>
+      
     </main>
+    <div class="instruction">Leave us a Positive Review ❤️</div>
   </div>
 
   <script src="review.js"></script>
