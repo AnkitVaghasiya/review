@@ -1,156 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HK Factory Outlet (VethiQ) & HK Fashion (MUKALAL)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-main: #181818;
-      --bg-card: #232323;
-      --text-main: #e0e0e0;
-      --text-muted: #b0b0b0;
+      --bg-main: #0f0f0f;
+      --bg-card: #1e1e1e;
+      --text-main: #ffffff;
+      --text-muted: #aaaaaa;
       --accent: #ffb300;
-      --radius: 12px;
-      --shadow: 0 2px 12px rgba(0,0,0,0.2);
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.4);
     }
+
     html, body {
-      height: 100%;
       margin: 0;
       padding: 0;
+      height: 100%;
+      font-family: 'Inter', sans-serif;
       background: var(--bg-main);
       color: var(--text-main);
-      font-family: 'Segoe UI', Arial, sans-serif;
-      width: 100%;
-      min-height: 90vh;
-    }
-    body {
-      min-height: 90vh;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
     }
+
     .container {
       width: 100%;
-      max-width: 500px;
+      max-width: 480px;
       padding: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      gap: 20px;
     }
+
     header {
-      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 16px 0 0 0;
-      background: transparent;
-      box-shadow: none;
     }
+
     .brand-logo {
+      max-width: 160px;
       width: 100%;
-      max-width: 200px;
       height: auto;
       margin-bottom: 10px;
-      display: block;
-      margin: 0 auto 10px auto;
     }
+
     .brand-title {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 600;
-      letter-spacing: 0.5px;
-      text-align: center;
-      margin-bottom: 10px;
+      color: var(--text-main);
     }
+
     main {
       width: 100%;
-      max-width: 420px;
       background: var(--bg-card);
       border-radius: var(--radius);
+      padding: 20px;
       box-shadow: var(--shadow);
-      padding: 16px;
       display: flex;
       flex-direction: column;
-      align-items: center;
       gap: 18px;
-      margin: 0;
     }
+
     .star-rating {
-      font-size: 3rem;
+      font-size: 2.8rem;
       color: var(--accent);
       letter-spacing: 2px;
-      text-align: center;
-      margin-bottom: 1px;
     }
-    .review-section {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      margin-top: 6px;
-    }
+
     .review-textarea {
-      background: #181818;
-      color: var(--text-main);
-      border-radius: 8px;
-      padding: 16px;
-      font-size: 1.07rem;
-      font-family: inherit;
-      border: 1px solid #292929;
       width: 100%;
-      box-sizing: border-box;
+      background: #121212;
+      color: var(--text-main);
+      font-size: 1.05rem;
+      border-radius: 10px;
+      border: 1px solid #333;
+      padding: 16px;
       resize: none;
-      margin-bottom: 8px;
-      user-select: text;
-      text-align: center;
-      transition: all 0.2s;
-      min-height: 50px;
       overflow-y: hidden;
+      box-sizing: border-box;
+      transition: all 0.2s ease;
     }
+
     .copy-btn {
-      background: var(--accent);
-      color: #232323;
+      background: linear-gradient(45deg, #ffb300, #ffa000);
+      color: #000;
       border: none;
-      border-radius: 6px;
-      padding: 8px 18px;
-      font-size: 1rem;
-      font-weight: 500;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      font-weight: bold;
       cursor: pointer;
-      transition: background 0.2s;
-      margin-bottom: 4px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+
     .copy-btn:hover {
-      background: #ffa000;
+      transform: scale(1.03);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
     }
+
     .instruction {
+      font-size: 0.95rem;
       color: var(--text-muted);
-      font-size: 0.98rem;
-      text-align: center;
+      margin-top: -8px;
     }
+
     @media (max-width: 480px) {
-      .brand-logo {
-        max-width: 80%;
-      }
       .brand-title {
         font-size: 1.1rem;
       }
-      main {
-        max-width: 95vw;
-        padding: 10px;
-      }
       .star-rating {
-        font-size: 2rem;
-      }
-      .review-textarea {
-        font-size: 0.98rem;
-        padding: 10px;
+        font-size: 2.2rem;
       }
       .copy-btn {
         font-size: 1rem;
@@ -162,19 +130,55 @@
 <body>
   <div class="container">
     <header>
-      <img src="VETHIQ-FINAL-LOGO_6-PNG-FILE-white.png" alt="Brand Logo" class="brand-logo" />
-      <span class="brand-title">HK Factory Outlet (VethiQ) & HK Fashion (MUKALAL)</span>
+      <img src="VETHIQ-FINAL-LOGO_6-PNG-FILE-white.png" alt="Brand Logo" class="brand-logo">
+      <div class="brand-title">HK Factory Outlet (VethiQ) & HK Fashion (MUKALAL)</div>
     </header>
     <main>
       <div class="star-rating">★★★★★</div>
-      <div class="review-section">
-        <textarea class="review-textarea" id="reviewText" readonly></textarea>
-        <button class="copy-btn" onclick="copyAndRedirect()" style="background: linear-gradient(45deg, #ffb300, #ffa000); color: #000000; font-size: 1.2rem; padding: 12px 24px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); transition: transform 0.2s, box-shadow 0.2s; font-weight: bold;">
-          Copy
-        </button>
-      </div>
+      <textarea class="review-textarea" id="reviewText" readonly></textarea>
+      <button class="copy-btn" onclick="copyAndRedirect()">Copy & Open Review</button>
+      <div class="instruction">Tap above to copy & leave us a Google review ❤️</div>
     </main>
   </div>
-  <script src="review.js"></script>
+
+  <script src="review.js">
+   
+    function getRandomReview() {
+      return reviews[Math.floor(Math.random() * reviews.length)];
+    }
+
+    function loadReview() {
+      const textarea = document.getElementById('reviewText');
+      textarea.value = getRandomReview();
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    }
+
+    function copyAndRedirect() {
+      const reviewText = document.getElementById("reviewText").value;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(reviewText).then(() => {
+          window.open("https://g.page/r/CQL6YaZ4hugaEAE/review", "_blank");
+        }).catch(() => {
+          fallbackCopy(reviewText);
+        });
+      } else {
+        fallbackCopy(reviewText);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+      window.open("https://g.page/r/CQL6YaZ4hugaEAE/review", "_blank");
+    }
+
+    window.addEventListener('DOMContentLoaded', loadReview);
+  </script>
 </body>
 </html>
