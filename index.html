@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HK Factory Outlet (VethiQ) 
-    & 
-    HK Fashion (MUKALAL)</title>
+  <div class="brand-title">
+  <div class="line">HK Factory Outlet (VethiQ)</div>
+  <div class="line">&</div>
+  <div class="line">HK Fashion (MUKALAL)</div>
+</div>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -34,10 +37,9 @@
     .container {
       width: 100%;
       max-width: 480px;
-      padding: 20px 20px 20px 20px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
       gap: 20px;
     }
@@ -46,7 +48,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
     }
 
     .brand-logo {
@@ -57,20 +58,29 @@
     }
 
     .brand-title {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--text-main);
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.brand-title .line {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
 
     main {
-      width: 90%;
+      width: 100%;
       background: var(--bg-card);
       border-radius: var(--radius);
-      padding: 20px 20px 20px 20px;
+      padding: 20px;
       box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
-      justify-content: center;
       gap: 18px;
     }
 
@@ -92,7 +102,6 @@
       overflow-y: hidden;
       box-sizing: border-box;
       transition: all 0.2s ease;
-      justify-content: center;
     }
 
     .copy-btn {
@@ -142,15 +151,15 @@
     <main>
       <div class="star-rating">★★★★★</div>
       <textarea class="review-textarea" id="reviewText" readonly></textarea>
-      <button class="copy-btn" onclick="copyAndRedirect()">Copy & Leave Review</button>
-      <div class="instruction">Leave us a Posotive Review ❤️</div>
+      <button class="copy-btn" onclick="copyAndRedirect()">Copy & Open Review</button>
+      <div class="instruction">Tap above to copy & leave us a Google review ❤️</div>
     </main>
   </div>
 
   <script src="review.js">
    
     function getRandomReview() {
-      return reviews[Math.floor(Math.random() * reviews.length)];
+      returLs[Math.floor(Math.random() * reviews.length)];
     }
 
     function loadReview() {
