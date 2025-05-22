@@ -15,31 +15,31 @@
       --shadow: 0 2px 12px rgba(0,0,0,0.2);
     }
     html, body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg-main);
-  color: var(--text-main);
-  font-family: 'Noto Sans Gujarati', 'Anek Gujarati', 'Segoe UI', Arial, sans-serif;
-  width: 100%;
-  min-height: 100vh;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.container {
-  width: 100%;
-  max-width: 500px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: var(--bg-main);
+      color: var(--text-main);
+      font-family: 'Noto Sans Gujarati', 'Anek Gujarati', 'Segoe UI', Arial, sans-serif;
+      width: 100%;
+      min-height: 100vh;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 500px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
     header {
       width: 100%;
       display: flex;
@@ -71,7 +71,7 @@ body {
       background: var(--bg-card);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 16px 16px 16px 16px;
+      padding: 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -97,7 +97,7 @@ body {
       background: #181818;
       color: var(--text-main);
       border-radius: 8px;
-      padding: 16px 16px 16px 16px;
+      padding: 16px;
       font-size: 1.07rem;
       font-family: inherit;
       border: 1px solid #292929;
@@ -135,29 +135,28 @@ body {
       text-align: center;
     }
     @media (max-width: 480px) {
-  .brand-logo {
-    max-width: 80%;
-  }
-  .brand-title {
-    font-size: 1.1rem;
-  }
-  main {
-    max-width: 95vw;
-    padding: 10px;
-  }
-  .star-rating {
-    font-size: 2rem;
-  }
-  .review-textarea {
-    font-size: 0.98rem;
-    padding: 10px;
-  }
-  .copy-btn {
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
-}
-
+      .brand-logo {
+        max-width: 80%;
+      }
+      .brand-title {
+        font-size: 1.1rem;
+      }
+      main {
+        max-width: 95vw;
+        padding: 10px;
+      }
+      .star-rating {
+        font-size: 2rem;
+      }
+      .review-textarea {
+        font-size: 0.98rem;
+        padding: 10px;
+      }
+      .copy-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+    }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -172,8 +171,8 @@ body {
       <div class="review-section">
         <textarea class="review-textarea" id="reviewText" readonly></textarea>
         <button class="copy-btn" onclick="copyAndRedirect()" style="background: linear-gradient(45deg, #ffb300, #ffa000); color: #000000; font-size: 1.2rem; padding: 12px 24px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); transition: transform 0.2s, box-shadow 0.2s; font-weight: bold;">
-  Copy
-</button>
+          Copy
+        </button>
       </div>
     </main>
   </div>
