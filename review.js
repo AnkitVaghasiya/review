@@ -1,4 +1,4 @@
-const review = [
+const reviews = [
 "Bhai, Laxman Nagar se Aliya Pair li from HK Factory Outlet, sab kuch latest colection me hai, unique design aur perfect he Wedding Gown ke liye.  Aajkal sab yahin se le rahe hain.",
 "Bhai, Laxman Nagar se Aliya Pair li from VethiQ Luxury, quality bhi zabardast hai, stylish aur perfect he Women Fashion ke liye. 😍 Full paisa vasool.",
 "Bhai, Laxman Nagar se Co-ord Set liya from VethiQ Luxury, price bhi ekdum hu sahi he, affordable aur perfect he Women Fashion ke liye. 💃 Mummy ko bhi pasand aayi.",
@@ -378,7 +378,7 @@ const review = [
 "Surat mathi Tunic lidhu from HK Factory Outlet, colors mast che, quality mast che ane Wedding Gown mate ekdam perfect. ✨ Ekdam unique che.",
 "Surat se Aliya Pair li from HK Factory Outlet, colors mast he, unique design aur perfect he Wedding Gown ke liye. 🛍️ Aajkal sab yahin se le rahe hain.",
 "Surat se Co-ord Set liya from HK Factory Outlet, collection ek number tha, fitting mast aur perfect he Women Fashion ke liye. 😊 Next time friends ke sath aungi.",
-"Surat se Co-ord Set liya from HK Factory Outlet, sab kuch latest colection me hai, bahut comfortable aur perfect he Women Fashion ke liye.  Next time friends ke sath aungi.",
+"Surat se Co-ord Set liya from HK Factory Outlet, sab kuch latest colection me hai, bahut comfortable aur perfect he Women Fashion ke liye.  Next time friends ke sath aavish.",
 "Surat se Co-ord Set liya from HK Factory Outlet, shop ka vibe alag hai, trendy aur perfect he Trendy Kurti ke liye.  Sabko recommend karungi.",
 "Surat se Co-ord Set liya from VethiQ Luxury, collection ek number tha, affordable aur perfect he Women Fashion ke liye. 😍 Aajkal sab yahin se le rahe hain.",
 "Surat se Co-ord Set liya from VethiQ Luxury, shop ka vibe alag hai, trendy aur perfect he Ethnic Wear ke liye. 👌",
@@ -386,7 +386,7 @@ const review = [
 "Surat se Gown liya from HK Factory Outlet, shop ka vibe alag hai, stylish aur perfect he Women Fashion ke liye. 🌸 Sabko recommend karungi.",
 "Surat se Kurti li from HK Factory Outlet, sab kuch latest colection me hai, trendy aur perfect he Ethnic Wear ke liye. 👌 Sabko recommend karungi.",
 "Surat se Kurti li from VethiQ Luxury, price bhi ekdum hu sahi he, quality zabardast aur perfect he Women Fashion ke liye.",
-"Surat se Kurti li from VethiQ Luxury, quality bhi zabardast hai, bahut sundar aur perfect he Designer Palazzo ke liye. ✨ Next time friends ke sath aungi.",
+"Surat se Kurti li from VethiQ Luxury, quality bhi zabardast hai, bahut sundar aur perfect he Designer Palazzo ke liye. ✨ Next time friends ke sath aavish.",
 "Surat se Palazzo Pair li from HK Factory Outlet, colors mast he, fitting mast aur perfect he Ethnic Wear ke liye. 🌸",
 "Surat se Palazzo Pair li from HK Factory Outlet, fitting ekdum mast thi, fitting mast aur perfect he Wedding Gown ke liye. 👌",
 "Surat se Palazzo Pair li from HK Factory Outlet, fitting ekdum mast thi, stylish aur perfect he Wedding Gown ke liye. ❤️ Aajkal sab yahin se le rahe hain.",
@@ -394,7 +394,7 @@ const review = [
 "Surat se Palazzo Pair li from VethiQ Luxury, service fast he, soft fabric aur perfect he Trendy Kurti ke liye. 👌 Sabko recommend karungi.",
 "Surat se Pant Pair li from VethiQ Luxury, fitting ekdum mast thi, soft fabric aur perfect he Wedding Gown ke liye. 🛍️ Full paisa vasool.",
 "Surat se Tunic liya from HK Factory Outlet, quality bhi zabardast hai, fitting mast aur perfect he Trendy Kurti ke liye. 🛍️ Love it!",
-"Surat se Tunic liya from VethiQ Luxury, collection ek number tha, bahut sundar aur perfect he Women Fashion ke liye. 😊 Next time friends ke sath aungi.",
+"Surat se Tunic liya from VethiQ Luxury, collection ek number tha, bahut sundar aur perfect he Women Fashion ke liye. 😊 Next time friends ke sath aavish.",
 "To be frank, I bought a Aliya Pair from VethiQ Luxury in Laxman Nagar, ambience is nice, it's soft fabric and perfect for Trendy Kurti. 🌸 My mom loved it too.",
 "To be frank, I bought a Co-ord Set from HK Factory Outlet in Varachha, fabric feels premium, it's trendy and perfect for Ethnic Wear.  Great for daily wear.",
 "To be frank, I bought a Co-ord Set from VethiQ Luxury in Surat, collection is huge, it's stylish and perfect for Women Fashion. 💃 My mom loved it too.",
@@ -443,7 +443,7 @@ const review = [
 "Wah bhai wah, Laxman Nagar se Kurti li from HK Factory Outlet, sab kuch latest colection me hai, fitting mast aur perfect he Trendy Kurti ke liye. 💃 Thanks HK Factory Outlet!",
 "Wah bhai wah, Laxman Nagar se Pant Pair li from HK Factory Outlet, staff full helpful tha, trendy aur perfect he Women Fashion ke liye. ❤️ Full paisa vasool.",
 "Wah bhai wah, Laxman Nagar se Tunic liya from VethiQ Luxury, service fast he, bahut sundar aur perfect he Trendy Kurti ke liye.  Sabko recommend karungi.",
-"Wah bhai wah, Surat se Co-ord Set liya from HK Factory Outlet, staff full helpful tha, bahut comfortable aur perfect he Women Fashion ke liye. ❤️ Next time friends ke sath aungi.",
+"Wah bhai wah, Surat se Co-ord Set liya from HK Factory Outlet, staff full helpful tha, bahut comfortable aur perfect he Women Fashion ke liye. ❤️ Next time friends ke sath aavungi.",
 "Wah bhai wah, Surat se Crop Top liya from VethiQ Luxury, colors mast he, trendy aur perfect he Women Fashion ke liye. 👌 Fir aaungi pakka!",
 "Wah bhai wah, Surat se Gown liya from HK Factory Outlet, colors mast he, bahut comfortable aur perfect he Designer Palazzo ke liye. 😍 Aajkal sab yahin se le rahe hain.",
 "Wah bhai wah, Surat se Kurti li from HK Factory Outlet, colors mast he, trendy aur perfect he Designer Palazzo ke liye. ❤️ Fir aaungi pakka!",
@@ -481,35 +481,23 @@ const review = [
 "Yaar, Surat se Pant Pair li from HK Factory Outlet, colors mast he, soft fabric aur perfect he Ethnic Wear ke liye.  Aajkal sab yahin se le rahe hain.",
 "Yaar, Varachha se Aliya Pair li from HK Factory Outlet, fitting ekdum mast thi, affordable aur perfect he Women Fashion ke liye. 💃 Aajkal sab yahin se le rahe hain.",
 "Yaar, Varachha se Co-ord Set liya from VethiQ Luxury, fitting ekdum mast thi, affordable aur perfect he Designer Palazzo ke liye. 👌 Sabko recommend karungi.",
-"Yaar, Varachha se Crop Top liya from VethiQ Luxury, shop ka vibe alag hai, fitting mast aur perfect he Ethnic Wear ke liye. 😊 Next time friends ke sath aungi.",
+"Yaar, Varachha se Crop Top liya from VethiQ Luxury, shop ka vibe alag hai, fitting mast aur perfect he Ethnic Wear ke liye. 😊 Next time friends ke sath aavungi.",
 "Yaar, Varachha se Palazzo Pair li from HK Factory Outlet, collection ek number tha, affordable aur perfect he Trendy Kurti ke liye. 👌 Full paisa vasool.",
 "Yaar, Varachha se Palazzo Pair li from VethiQ Luxury, fitting ekdum mast thi, bahut comfortable aur perfect he Trendy Kurti ke liye. 😊 Thanks HK Factory Outlet!",
-"Yaar, Varachha se Tunic liya from VethiQ Luxury, price bhi ekdum hu sahi he, bahut comfortable aur perfect he Wedding Gown ke liye. ❤️ Mummy ko bhi pasand aayi.",
-"Yaar, su collection che, Laxman Nagar mathi Co-ord Set lidho from HK Factory Outlet, collection ek number che, sasta ane Wedding Gown mate ekdam perfect. 💃 Mummy ne khub gamyu.",
-"Yaar, su collection che, Laxman Nagar mathi Crop Top lidhu from HK Factory Outlet, service to bov j fast che, unique design ane Women Fashion mate ekdam perfect. ✨ Full paisa vasool.",
-"Yaar, su collection che, Laxman Nagar mathi Palazzo Pair lidhi from HK Factory Outlet, price to bov j reasonable che, sundar ane Designer Palazzo mate ekdam perfect.  Thanks HK Factory Outlet!",
-"Yaar, su collection che, Laxman Nagar mathi Palazzo Pair lidhi from HK Factory Outlet, service to bov j fast che, quality mast che ane Ethnic Wear mate ekdam perfect. 👍 Full paisa vasool.",
-"Yaar, su collection che, Laxman Nagar mathi Palazzo Pair lidhi from VethiQ Luxury, quality pan best che, soft fabric ane Ethnic Wear mate ekdam perfect. 😍 Love it!",
-"Yaar, su collection che, Laxman Nagar mathi Tunic lidhu from VethiQ Luxury, fitting mast che, sundar ane Designer Palazzo mate ekdam perfect. 💃 Full paisa vasool.",
-"Yaar, su collection che, Surat mathi Aliya Pair lidhi from HK Factory Outlet, staff khub helpful che, trendy ane Trendy Kurti mate ekdam perfect. 🛍️ Full paisa vasool.",
-"Yaar, su collection che, Surat mathi Pant Pair lidhi from VethiQ Luxury, collection ek number che, khub comfort che ane Wedding Gown mate ekdam perfect. 🛍️ Thanks HK Factory Outlet!",
-"Yaar, su collection che, Varachha mathi Crop Top lidhu from VethiQ Luxury, colors mast che, soft fabric ane Trendy Kurti mate ekdam perfect. 🌸 Next time family sathe aavish.",
-"Yaar, su collection che, Varachha mathi Kurti lidhi from VethiQ Luxury, price to bov j reasonable che, trendy ane Ethnic Wear mate ekdam perfect. 👍 Thanks HK Factory Outlet!",
-"Yaar, su collection che, Varachha mathi Palazzo Pair lidhi from HK Factory Outlet, collection ek number che, soft fabric ane Ethnic Wear mate ekdam perfect. 😍 Ekdam unique che.",
-"Yaar, su collection che, Varachha mathi Palazzo Pair lidhi from HK Factory Outlet, quality pan best che, quality mast che ane Ethnic Wear mate ekdam perfect. 😊 Pachi pan aavish.",
-"Yaar, su collection che, Varachha mathi Pant Pair lidhi from HK Factory Outlet, shop ni vibe kyk alag j che, khub comfort che ane Ethnic Wear mate ekdam perfect. 👌 Full paisa vasool.",
-"Yaar, su collection che, Varachha mathi Tunic lidhu from VethiQ Luxury, quality pan best che, sasta ane Designer Palazzo mate ekdam perfect.  Full paisa vasool.",
+"Yaar, Varachha se Tunic liya from VethiQ Luxury, price bhi ekdum hu sahi he, bahut comfortable aur perfect he Wedding Gown ke liye. ❤️ Mummy ko bhi pasand aayi."
 ];
 
 // ✅ Select random review
 function getRandomReview() {
-  return review[Math.floor(Math.random() * review.length)];
+  return reviews[Math.floor(Math.random() * reviews.length)];
 }
 
-// ✅ Load review into textarea
+// ✅ Load review into textarea and auto-resize
 function loadReview() {
   const textarea = document.getElementById('reviewText');
   textarea.value = getRandomReview();
+  textarea.style.height = 'auto';
+  textarea.style.height = textarea.scrollHeight + 'px';
 }
 
 // ✅ Copy to clipboard and redirect to Google review

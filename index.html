@@ -21,24 +21,25 @@
       background: var(--bg-main);
       color: var(--text-main);
       font-family: 'Noto Sans Gujarati', 'Anek Gujarati', 'Segoe UI', Arial, sans-serif;
-      min-height: 100vh;
       width: 100vw;
+      overflow: hidden;
     }
     body {
-      min-height: 100vh;
-      min-width: 100vw;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .container {
-      min-height: 100vh;
       width: 100vw;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
+    }
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
     }
     header {
       width: 100%;
@@ -46,14 +47,17 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 24px 0 0 0;
+      padding: 16px 0 0 0;
       background: transparent;
       box-shadow: none;
     }
     .brand-logo {
-      height: 556px;
-      width: auto;
+      width: 100%;
+      max-width: 200px;
+      height: auto;
       margin-bottom: 10px;
+      display: block;
+      margin: 0 auto 10px auto;
     }
     .brand-title {
       font-size: 1.5rem;
@@ -68,57 +72,57 @@
       background: var(--bg-card);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 32px 24px 24px 24px;
+      padding: 16px 16px 16px 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 28px;
-      margin-top: 18px;
-      margin-bottom: 18px;
+      gap: 18px;
+      margin: 0;
     }
     .star-rating {
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: var(--accent);
       letter-spacing: 2px;
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 1px;
     }
     .review-section {
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
-      margin-top: 10px;
+      gap: 8px;
+      margin-top: 6px;
     }
     .review-textarea {
       background: #181818;
       color: var(--text-main);
       border-radius: 8px;
-      padding: 18px 16px;
+      padding: 16px 16px 16px 16px;
       font-size: 1.07rem;
       font-family: inherit;
       border: 1px solid #292929;
-      min-height: 264px;
       width: 100%;
       box-sizing: border-box;
       resize: none;
       margin-bottom: 8px;
       user-select: text;
       text-align: center;
-      align-items: center;
+      transition: all 0.2s;
+      min-height: 50px;
+      overflow-y: hidden;
     }
     .copy-btn {
       background: var(--accent);
       color: #232323;
       border: none;
       border-radius: 6px;
-      padding: 10px 22px;
+      padding: 8px 18px;
       font-size: 1rem;
       font-weight: 500;
       cursor: pointer;
       transition: background 0.2s;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       display: block;
       margin-left: auto;
       margin-right: auto;
@@ -131,23 +135,23 @@
       font-size: 0.98rem;
       text-align: center;
     }
-    @media (max-width: 600px) {
+    @media (max-width: 250px) {
       .brand-logo {
-        height: 38px;
+        max-width: 80%;
       }
       .brand-title {
         font-size: 1.05rem;
       }
       main {
         max-width: 98vw;
-        padding: 14px 4vw 14px 4vw;
+        padding: 10px 2vw 10px 2vw;
       }
       .star-rating {
         font-size: 2rem;
       }
       .review-textarea {
         font-size: 0.98rem;
-        padding: 12px 6px;
+        padding: 8px 4px;
       }
     }
   </style>
@@ -156,15 +160,16 @@
 <body>
   <div class="container">
     <header>
-      <img src="VETHIQ-FINAL-LOGO_6-PNG-FILE-white.jpg" alt="Brand Logo" class="brand-logo" />
+      <img src="VETHIQ-FINAL-LOGO_6-PNG-FILE-white.png" alt="Brand Logo" class="brand-logo" />
       <span class="brand-title">HK Factory Outlet (VethiQ) & HK Fashion (MUKALAL)</span>
     </header>
     <main>
       <div class="star-rating">★★★★★</div>
       <div class="review-section">
         <textarea class="review-textarea" id="reviewText" readonly></textarea>
-        <button class="copy-btn" onclick="copyAndRedirect()">✂️ રિવ્યુ કોપી કરો અને Google ખોલો</button>
-        <div class="instruction">Google રિવ્યુ પેજ પર જઇને Paste કરો</div>
+        <button class="copy-btn" onclick="copyAndRedirect()" style="background: linear-gradient(45deg, #ffb300, #ffa000); color: #000000; font-size: 1.2rem; padding: 12px 24px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); transition: transform 0.2s, box-shadow 0.2s; font-weight: bold;">
+  Copy
+</button>
       </div>
     </main>
   </div>
