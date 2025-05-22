@@ -3,12 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <div class="brand-title">
-  <div class="line">HK Factory Outlet (VethiQ)</div>
-  <div class="line">&</div>
-  <div class="line">HK Fashion (MUKALAL)</div>
-</div>
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -58,20 +52,19 @@
     }
 
     .brand-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 4px;
-  margin-bottom: 10px;
-}
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
 
-.brand-title .line {
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-
+    .brand-title .line {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
 
     main {
       width: 100%;
@@ -129,7 +122,7 @@
     }
 
     @media (max-width: 480px) {
-      .brand-title {
+      .brand-title .line {
         font-size: 1.1rem;
       }
       .star-rating {
@@ -146,7 +139,11 @@
   <div class="container">
     <header>
       <img src="VETHIQ-FINAL-LOGO_6-PNG-FILE-white.png" alt="Brand Logo" class="brand-logo">
-      <div class="brand-title">HK Factory Outlet (VethiQ) & HK Fashion (MUKALAL)</div>
+      <div class="brand-title">
+        <div class="line">HK Factory Outlet (VethiQ)</div>
+        <div class="line">&</div>
+        <div class="line">HK Fashion (MUKALAL)</div>
+      </div>
     </header>
     <main>
       <div class="star-rating">★★★★★</div>
@@ -156,10 +153,10 @@
     </main>
   </div>
 
-  <script src="review.js">
-   
+  <script src="review.js"></script>
+  <script>
     function getRandomReview() {
-      returLs[Math.floor(Math.random() * reviews.length)];
+      return reviews[Math.floor(Math.random() * reviews.length)];
     }
 
     function loadReview() {
@@ -192,6 +189,14 @@
       document.body.removeChild(textArea);
       window.open("https://g.page/r/CQL6YaZ4hugaEAE/review", "_blank");
     }
+
+    const reviews = [
+      "Awesome collection & friendly staff! Must visit!",
+      "Great shopping experience with affordable prices!",
+      "Loved the ethnic wear variety! Highly recommended.",
+      "Beautiful fabrics and top-notch service.",
+      "5 stars for quality and service!"
+    ];
 
     window.addEventListener('DOMContentLoaded', loadReview);
   </script>
