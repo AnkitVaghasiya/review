@@ -69,7 +69,7 @@
     }
 
     main {
-      width: 150%;
+      width: 140%;
       background: var(--bg-card);
       border-radius: var(--radius);
       padding: 10px;
@@ -100,7 +100,7 @@
       font-size: 1.05rem;
       border-radius: 10px;
       border: 1px solid #333;
-      padding: 10px;
+      padding: 20px;
       resize: none;
       overflow-y: hidden;
       box-sizing: border-box;
@@ -140,7 +140,16 @@
       margin-top: 20px;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 480px) 
+    {
+
+      .container {
+        width: 100%;
+        padding: 20px;
+      }
+      .brand-logo {
+        max-width: 150px;
+      }
       .brand-title .line {
         font-size: 1.1rem;
       }
@@ -153,6 +162,8 @@
       }
     }
   </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <div class="container">
