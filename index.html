@@ -8,12 +8,12 @@
   <style>
     :root {
       --bg-main: #0f0f0f;
-      --bg-card: #1e1e1e;
+      --bg-card: #23242a; /* lighter dark for card */
       --text-main: #ffffff;
       --text-muted: #aaaaaa;
       --accent: #ffb300;
-      --radius: 14px;
-      --shadow: 0 8px 24px rgba(0,0,0,0.4);
+      --radius: 16px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.45);
     }
 
     html, body {
@@ -25,7 +25,7 @@
       background: var(--bg-main);
       color: var(--text-main);
       box-sizing: border-box;
-      overflow: hidden;
+      overflow: hidden; /* Prevent scrolling */
     }
 
     body {
@@ -34,7 +34,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      overflow: hidden; /* Prevent scrolling */
     }
 
     .container {
@@ -44,11 +44,36 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 24px;
+      gap: 18px;
       box-sizing: border-box;
-      padding: 0 12px;
+      padding: 0 8px;
       position: relative;
       overflow: hidden;
+    }
+
+    .main-content {
+      flex: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: var(--bg-card);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 32px 18px 24px 18px;
+      max-width: 420px;
+      width: 95vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin: auto;
+      text-align: center;
     }
 
     header {
@@ -61,7 +86,7 @@
     }
 
     .brand-logo {
-      max-width: 220px;
+      max-width: 320px;
       width: 70vw;
       height: auto;
       margin-bottom: 16px;
@@ -87,16 +112,16 @@
     }
 
     main {
-      width: 98vw;
+      width: 100%;
       max-width: 420px;
-      background: var(--bg-card);
+      background: transparent;
       border-radius: var(--radius);
-      padding: 14px 8px 12px 8px;
-      box-shadow: var(--shadow);
+      padding: 0;
+      box-shadow: none;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       margin: 0 auto;
     }
 
@@ -110,7 +135,7 @@
     }
 
     .review-textarea {
-      margin-top: 10px;
+      margin-top: 8px;
       display: block;
       width: 100%;
       max-width: 98vw;
@@ -119,7 +144,7 @@
       font-size: 1rem;
       border-radius: 10px;
       border: 1px solid #333;
-      padding: 12px 6px;
+      padding: 10px 4px;
       resize: none;
       overflow-y: hidden;
       box-sizing: border-box;
@@ -127,7 +152,7 @@
       margin-left: auto;
       margin-right: auto;
       text-align: center;
-      min-height: 50px;
+      min-height: 40px;
     }
 
     .copy-btn {
@@ -159,69 +184,82 @@
       font-size: 0.95rem;
       color: var(--text-muted);
       text-align: center;
+      position: relative;
       margin-top: 10px;
       word-wrap: break-word;
     }
 
     .copyright {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: var(--text-muted);
-      margin-top: 10px;
+      margin-top: 8px;
       text-align: center;
       width: 100%;
       position: static;
       word-wrap: break-word;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    /* Extra responsive for very small screens */
-    @media (max-width: 400px) {
+    @media (max-width: 600px) {
       .brand-logo {
         max-width: 120px;
         width: 60vw;
       }
       .brand-title .line {
-        font-size: 1rem;
+        font-size: 0.98rem;
+      }
+      .card {
+        padding: 24px 8px 18px 8px;
       }
       main {
         max-width: 99vw;
-        padding: 6px 2vw 6px 2vw;
+        padding: 0;
+      }
+      .star-rating {
+        font-size: 1.1rem;
       }
       .review-textarea {
         font-size: 0.92rem;
-        padding: 8px 2px;
-        min-height: 40px;
+        padding: 6px 2px;
+        min-height: 30px;
       }
       .copy-btn {
-        font-size: 0.95rem;
-        padding: 8px 8px;
+        font-size: 0.92rem;
+        padding: 6px 6px;
       }
       .instruction, .copyright {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <img src="VETHIQ-FINAL-LOGO_6-PNG-FILE-white.png" alt="Brand Logo" class="brand-logo">
-      <div class="brand-title">
-        <div class="line">HK Factory Outlet (VethiQ)</div>
-        <div class="line">&</div>
-        <div class="line">HK Fashion (MUKALAL)</div>
+    <div class="container">
+      <div class="main-content">
+        <div class="card">
+          <header>
+            <img src="VETHIQ-FINAL-LOGO_6-PNG-FILE-white.png" alt="Brand Logo" class="brand-logo">
+            <div class="brand-title">
+              <div class="line">HK Factory Outlet (VethiQ)</div>
+              <div class="line">&</div>
+              <div class="line">HK Fashion (MUKALAL)</div>
+            </div>
+          </header>
+          <main>
+            <div class="star-rating">★★★★★</div>
+            <textarea class="review-textarea" id="reviewText" readonly></textarea>
+            <button class="copy-btn" onclick="copyAndRedirect()">Copy & Leave Review</button>
+          </main>
+          <div class="instruction">Leave us a Positive Review ❤️</div>
+        </div>
       </div>
-    </header>
-    <main>
-      <div class="star-rating">★★★★★</div>
-      <textarea class="review-textarea" id="reviewText" readonly></textarea>
-      <button class="copy-btn" onclick="copyAndRedirect()">Copy & Leave Review</button>
-    </main>
-    <div class="instruction">Leave us a Positive Review ❤️</div>
-    <div class="copyright">
-      <div class="line"> COPYRIGHT 2025 © All Rights Reserved </div>
-      <div class="line">VETHIQ LUXURY PRIVATE LIMITED</div>
+      <div class="copyright">
+        <div class="line"> COPYRIGHT 2025 © All Rights Reserved </div>
+        <div class="line">VETHIQ LUXURY PRIVATE LIMITED</div>
+      </div>
     </div>
-  </div>
-  <script src="review.js"></script>
-</body>
+    <script src="review.js"></script>
+  </body>
 </html>
