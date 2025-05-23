@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-main: #0f0f0f;
@@ -16,41 +17,57 @@
     }
 
     html, body {
+      height: 100vh;
+      width: 100vw;
       margin: 0;
       padding: 0;
-      height: 100%;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', 'Noto Sans Gujarati', sans-serif;
       background: var(--bg-main);
       color: var(--text-main);
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    body {
+      height: 100vh;
+      width: 100vw;
       display: flex;
-      justify-content: center;
       align-items: center;
-      text-align: center;
+      justify-content: center;
+      overflow: hidden;
     }
 
     .container {
-      width: 105%;
-      max-width: 480px;
-      padding: 5px;
+      height: 100vh;
+      width: 100vw;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      gap: 20px;
+      justify-content: center;
+      gap: 24px;
+      box-sizing: border-box;
+      padding: 0 12px;
+      position: relative;
+      overflow: hidden;
     }
 
     header {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 0;
     }
 
     .brand-logo {
-      max-width: 210px;
-      width: 100%;
+      max-width: 220px;
+      width: 70vw;
       height: auto;
-      margin-bottom: 10px;
-      margin-top: -40px;
+      margin-bottom: 16px;
+      margin-top: 0;
+      display: block;
+      transition: max-width 0.2s;
     }
 
     .brand-title {
@@ -64,49 +81,53 @@
     }
 
     .brand-title .line {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 600;
+      letter-spacing: 0.5px;
     }
 
     main {
-      width: 140%;
+      width: 98vw;
+      max-width: 420px;
       background: var(--bg-card);
       border-radius: var(--radius);
-      padding: 10px;
+      padding: 14px 8px 12px 8px;
       box-shadow: var(--shadow);
       display: flex;
-      justify-content: center;
       flex-direction: column;
-      gap: 5px;
+      align-items: center;
+      gap: 10px;
+      margin: 0 auto;
     }
 
     .star-rating {
-      margin-top: -15px;
-      margin-bottom: -10px;
-      font-size: 2.8rem;
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 2.1rem;
       color: var(--accent);
       letter-spacing: 2px;
-      margin-left: auto;
-      margin-right: auto; /* Centers the textarea horizontally */
+      text-align: center;
     }
 
     .review-textarea {
       margin-top: 10px;
       display: block;
       width: 100%;
-      max-width: 480px; /* Matches the container's max-width */
+      max-width: 98vw;
       background: #121212;
       color: var(--text-main);
-      font-size: 1.05rem;
+      font-size: 1rem;
       border-radius: 10px;
       border: 1px solid #333;
-      padding: 20px;
+      padding: 12px 6px;
       resize: none;
       overflow-y: hidden;
       box-sizing: border-box;
       transition: all 0.2s ease;
       margin-left: auto;
-      margin-right: auto; /* Centers the textarea horizontally */
+      margin-right: auto;
+      text-align: center;
+      min-height: 50px;
     }
 
     .copy-btn {
@@ -115,7 +136,7 @@
       border: none;
       border-radius: 8px;
       margin-top: 10px;
-      padding: 10px 20px;
+      padding: 10px 16px;
       font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
@@ -126,7 +147,7 @@
       justify-content: center;
       align-self: center;
       margin-left: auto;
-      margin-right: auto; /* Centers the textarea horizontally */
+      margin-right: auto;
     }
 
     .copy-btn:hover {
@@ -137,33 +158,48 @@
     .instruction {
       font-size: 0.95rem;
       color: var(--text-muted);
-      margin-top: 20px;
+      text-align: center;
+      margin-top: 10px;
+      word-wrap: break-word;
     }
 
-    @media (max-width: 480px) 
-    {
+    .copyright {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+      text-align: center;
+      width: 100%;
+      position: static;
+      word-wrap: break-word;
+    }
 
-      .container {
-        width: 100%;
-        padding: 20px;
-      }
+    /* Extra responsive for very small screens */
+    @media (max-width: 400px) {
       .brand-logo {
-        max-width: 150px;
+        max-width: 120px;
+        width: 60vw;
       }
       .brand-title .line {
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
-      .star-rating {
-        font-size: 2.2rem;
+      main {
+        max-width: 99vw;
+        padding: 6px 2vw 6px 2vw;
+      }
+      .review-textarea {
+        font-size: 0.92rem;
+        padding: 8px 2px;
+        min-height: 40px;
       }
       .copy-btn {
-        font-size: 1rem;
-        padding: 10px 20px;
+        font-size: 0.95rem;
+        padding: 8px 8px;
+      }
+      .instruction, .copyright {
+        font-size: 0.85rem;
       }
     }
   </style>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
   <div class="container">
@@ -179,48 +215,13 @@
       <div class="star-rating">★★★★★</div>
       <textarea class="review-textarea" id="reviewText" readonly></textarea>
       <button class="copy-btn" onclick="copyAndRedirect()">Copy & Leave Review</button>
-      
     </main>
     <div class="instruction">Leave us a Positive Review ❤️</div>
+    <div class="copyright">
+      <div class="line"> COPYRIGHT 2025 © All Rights Reserved </div>
+      <div class="line">VETHIQ LUXURY PRIVATE LIMITED</div>
+    </div>
   </div>
-
   <script src="review.js"></script>
-  <script>
-    function getRandomReview() {
-      return reviews[Math.floor(Math.random() * reviews.length)];
-    }
-
-    function loadReview() {
-      const textarea = document.getElementById('reviewText');
-      textarea.value = getRandomReview();
-      textarea.style.height = 'auto';
-      textarea.style.height = textarea.scrollHeight + 'px';
-    }
-
-    function copyAndRedirect() {
-      const reviewText = document.getElementById("reviewText").value;
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(reviewText).then(() => {
-          window.open("https://g.page/r/CQL6YaZ4hugaEAE/review", "_blank");
-        }).catch(() => {
-          fallbackCopy(reviewText);
-        });
-      } else {
-        fallbackCopy(reviewText);
-      }
-    }
-
-    function fallbackCopy(text) {
-      const textArea = document.createElement("textarea");
-      textArea.value = text;
-      document.body.appendChild(textArea);
-      textArea.focus();
-      textArea.select();
-      document.execCommand("copy");
-      document.body.removeChild(textArea);
-      window.open("https://g.page/r/CQL6YaZ4hugaEAE/review", "_blank");
-    }
-    window.addEventListener('DOMContentLoaded', loadReview);
-  </script>
 </body>
 </html>
