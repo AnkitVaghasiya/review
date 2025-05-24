@@ -25,7 +25,11 @@
       background: var(--bg-main);
       color: var(--text-main);
       box-sizing: border-box;
-      overflow: hidden; /* Prevent scrolling */
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     body {
@@ -38,6 +42,7 @@
     }
 
     .container {
+      flex: 1 1 auto;
       height: 100vh;
       width: 100vw;
       display: flex;
@@ -49,10 +54,11 @@
       padding: 0 8px;
       position: relative;
       overflow: hidden;
+      min-height: 100vh;
     }
 
     .main-content {
-      flex: 1;
+      flex: 0 0 auto;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -217,6 +223,7 @@
       font-size: 0.92rem;
       color: var(--text-muted);
       margin-top: 8px;
+      margin-bottom: 0;
       text-align: center;
       width: 100%;
       position: static;
@@ -235,6 +242,13 @@
     }
 
     @media (max-width: 600px) {
+      body, .container {
+        min-height: 100vh;
+        height: 100dvh;
+      }
+      .container {
+        padding: 0 2vw;
+      }
       .brand-logo {
         max-width: 180px;
         width: 90vw;
