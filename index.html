@@ -66,14 +66,35 @@
       border-radius: var(--radius);
       padding: 32px 18px 24px 18px;
       max-width: 420px;
-      width: 95vw;
+      width: 100%;
+      min-height: 80vh;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between; /* Distribute all content vertically */
       gap: 18px;
       margin: auto;
       text-align: center;
+    }
+
+    .card header,
+    .card main,
+    .card .instruction {
+      width: 100%;
+    }
+
+    .card main {
+      flex: 0 0 auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      margin: 0 auto;
+      min-height: unset;
+      box-sizing: border-box;
     }
 
     header {
@@ -117,12 +138,15 @@
       background: transparent;
       border-radius: var(--radius);
       padding: 0;
+      box-sizing: border-box;
       box-shadow: none;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: flex-end;
       gap: 8px;
       margin: 0 auto;
+      min-height: 40vh;
     }
 
     .star-rating {
@@ -202,16 +226,26 @@
       text-overflow: ellipsis;
     }
 
+    .storefront-photo {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 12px;
+      margin: 10px 0 0 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    }
+
     @media (max-width: 600px) {
       .brand-logo {
-        max-width: 120px;
-        width: 60vw;
+        max-width: 180px;
+        width: 90vw;
       }
       .brand-title .line {
         font-size: 0.98rem;
       }
       .card {
         padding: 24px 8px 18px 8px;
+        width: 100%;
+        max-width: 99vw;
       }
       main {
         max-width: 99vw;
@@ -232,6 +266,10 @@
       .instruction, .copyright {
         font-size: 0.8rem;
       }
+      .storefront-photo {
+        max-width: 98vw;
+        margin-top: 8px;
+      }
     }
   </style>
 </head>
@@ -246,8 +284,9 @@
               <div class="line">&</div>
               <div class="line">HK Fashion (MUKALAL)</div>
             </div>
+            <img src="1Q7A0835.JPG" alt="Storefront Photo" class="storefront-photo">
           </header>
-          <main>
+          <main style="flex:1; width:100%; display:flex; flex-direction:column; justify-content:flex-end; align-items:center;">
             <div class="star-rating">★★★★★</div>
             <textarea class="review-textarea" id="reviewText" readonly></textarea>
             <button class="copy-btn" onclick="copyAndRedirect()">Copy & Leave Review</button>
