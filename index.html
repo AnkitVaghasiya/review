@@ -52,17 +52,17 @@
     function copyAndRedirect() {
       const text = document.getElementById('reviewText').value;
       const reviewUrl = 'https://g.page/r/CQL6YaZ4hugaEBM/review';
-      // Try to open in Google Maps app on Android
-      let mapIntentUrl = 'geo:0,0?q=' + encodeURIComponent(reviewUrl);
+      // For Google Maps app intent (works on Android)
+      const mapsIntent = 'intent://maps.google.com/?q=' + encodeURIComponent(reviewUrl) + '#Intent;package=com.google.android.apps.maps;scheme=https;end';
       let isAndroid = /Android/i.test(navigator.userAgent);
       if (navigator.clipboard) {
         navigator.clipboard.writeText(text).then(() => {
           if (isAndroid) {
-            // Try to open in Google Maps app
-            window.location.href = mapIntentUrl;
+            // Try to open in Google Maps app directly
+            window.location.href = mapsIntent;
             setTimeout(function() {
               window.open(reviewUrl, '_blank');
-            }, 800);
+            }, 1200);
           } else {
             window.open(reviewUrl, '_blank');
           }
@@ -76,10 +76,10 @@
         document.execCommand('copy');
         document.body.removeChild(textarea);
         if (isAndroid) {
-          window.location.href = mapIntentUrl;
+          window.location.href = mapsIntent;
           setTimeout(function() {
             window.open(reviewUrl, '_blank');
-          }, 800);
+          }, 1200);
         } else {
           window.open(reviewUrl, '_blank');
         }
