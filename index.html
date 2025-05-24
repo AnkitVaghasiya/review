@@ -14,7 +14,6 @@
     <div class="main-content">
       <div class="card">
         <header>
-          <img src="VETHIQ-FINAL-LOGO_6-PNG-FILE-white.png" alt="Brand Logo" class="brand-logo">
           <div class="brand-title">
             <div class="line">HK Factory Outlet (VethiQ)</div>
             <div class="line">&</div>
@@ -52,9 +51,21 @@
     window.addEventListener('DOMContentLoaded', showRandomReview);
     function copyAndRedirect() {
       const text = document.getElementById('reviewText').value;
+      const reviewUrl = 'https://g.page/r/CQL6YaZ4hugaEBM/review';
+      // Try to open in Google Maps app on Android
+      let mapIntentUrl = 'geo:0,0?q=' + encodeURIComponent(reviewUrl);
+      let isAndroid = /Android/i.test(navigator.userAgent);
       if (navigator.clipboard) {
         navigator.clipboard.writeText(text).then(() => {
-          window.open('https://g.page/r/CQL6YaZ4hugaEBM/review', '_blank');
+          if (isAndroid) {
+            // Try to open in Google Maps app
+            window.location.href = mapIntentUrl;
+            setTimeout(function() {
+              window.open(reviewUrl, '_blank');
+            }, 800);
+          } else {
+            window.open(reviewUrl, '_blank');
+          }
         });
       } else {
         // fallback for old browsers
@@ -64,7 +75,14 @@
         textarea.select();
         document.execCommand('copy');
         document.body.removeChild(textarea);
-        window.open('https://g.page/r/CQL6YaZ4hugaEBM/review', '_blank');
+        if (isAndroid) {
+          window.location.href = mapIntentUrl;
+          setTimeout(function() {
+            window.open(reviewUrl, '_blank');
+          }, 800);
+        } else {
+          window.open(reviewUrl, '_blank');
+        }
       }
     }
   </script>
