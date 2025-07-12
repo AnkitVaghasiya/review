@@ -27,7 +27,7 @@ for kw in kw_list:
             top_df = trending[kw]['top']
             for row in top_df.to_dict('records'):
                 if 'query' in row:
-                    cleaned = row['query'].replace(" ", "").replace("-", "")
+                    cleaned = row['query'].replace(" ", "").replace(" ", "")
                     seo_keywords.add(cleaned)
         except Exception:
             pass
