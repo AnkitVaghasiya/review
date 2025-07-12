@@ -92,9 +92,10 @@ header {
   padding: 16px;
 }
 .logo {
-  max-width: 100px;   /* Adjust as needed */
+  max-width: 200px;   /* Adjust as needed */
   height: auto;
   margin-right: 10px;
+  margin-top: 0px;
   vertical-align: middle;
 }
 .brand-title {
