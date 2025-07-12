@@ -1,7 +1,7 @@
 import random
 from pytrends.request import TrendReq
 
-# --- Paraphrasing (optional, for English only) ---
+# --- Optional Paraphrasing for English Reviews ---
 try:
     from transformers import pipeline
     paraphraser = pipeline("text2text-generation", model="Vamsi/T5_Paraphrase_Paws")
@@ -10,8 +10,7 @@ except Exception:
     paraphrasing_enabled = False
     paraphraser = None
 
-
-# --- Fetch trending SEO keywords ---
+# --- Get Trending Keywords ---
 pytrends = TrendReq(hl='en-US', tz=330)
 kw_list = ["ethnic wear", "kurti", "palazzo", "women fashion", "designer gown"]
 try:
@@ -27,7 +26,7 @@ for kw in kw_list:
             top_df = trending[kw]['top']
             for row in top_df.to_dict('records'):
                 if 'query' in row:
-                    cleaned = row['query'].replace(" ", "").replace(" ", "")
+                    cleaned = row['query'].replace(" ", "").replace("-", "")
                     seo_keywords.add(cleaned)
         except Exception:
             pass
@@ -37,7 +36,7 @@ if not seo_keywords:
 
 seo_keywords = list(seo_keywords)
 
-# --- Review Elements ---
+# --- Review Parts ---
 products = ["Kurti", "Tunic", "Co-ord Set", "Pant Pair", "Palazzo Pair", "Aliya Pair", "Crop Top", "Gown"]
 product_postfix = {
     "Kurti": {"gu": "lidhi", "hi": "li"},
@@ -69,43 +68,57 @@ starters_en = ["", "Wow,", "Honestly,", "To be frank,", "No words,", "Guys,", "T
 enders_en = ["", "Will buy again.", "Such a great find.", "My mom loved it too.", "Best experience ever.", "Highly recommended.", "Great for daily wear.", "Perfect for gifting.", "My friends asked where I got it.", "Must try!"]
 mid_phrases_en = ["the staff was so helpful", "loved the colors", "fabric feels premium", "fit is just right", "price is reasonable", "collection is huge", "location is easy to find", "ambience is nice", "service is quick"]
 
-# ------------------
-# Generation Function
-# ------------------
+# --- Generate One Review ---
 def generate_review(lang, product, area, emoji, keyword):
-    starter, ender, mid, emotion = "", "", "", ""
     postfix = product_postfix[product][lang] if lang in ["hi", "gu"] else ""
-    
-    # Randomly choose the shop name
-    shop_name = random.choice(["HK Factory Outlet"])
-    
+    shop_name = "HK Factory Outlet"
+
+    seo_line = random.choice([
+        f"Best {product.lower()} shop in {area}.",
+        f"Top-rated women's wear store in {area}.",
+        f"{shop_name} is known for ethnic wear in {area}.",
+        f"Affordable {product.lower()}s in {area}.",
+        f"Buy designer ethnic wear in {area}.",
+    ])
+
     if lang == "en":
         starter = random.choice(starters_en)
         ender = random.choice(enders_en)
         mid = random.choice(mid_phrases_en)
         emotion = random.choice(emotions_en)
-        review = f"{starter} I bought a {product} from {shop_name} in {area}, {mid}, it's {emotion} and perfect for {keyword}. {emoji} {ender}"
+        review = random.choice([
+            f"{starter} I bought a {product} from {shop_name} in {area}, {mid}, it's {emotion} and perfect for {keyword}. {emoji} {ender}",
+            f"{starter} From {shop_name} in {area}, I got a {product} – {emotion}, {mid}, ideal for {keyword}. {emoji} {ender}",
+            f"{starter} Got a {product} at {shop_name}, {area}. It's {emotion}, {mid}, best for {keyword}. {emoji} {ender}"
+        ])
     elif lang == "hi":
         starter = random.choice(starters_hi)
         ender = random.choice(enders_hi)
         mid = random.choice(mid_phrases_hi)
         emotion = random.choice(emotions_hi)
-        review = f"{starter} {area} se {product} {postfix} from {shop_name}, {mid}, {emotion} aur perfect he {keyword} ke liye. {emoji} {ender}"
+        review = random.choice([
+            f"{starter} {area} se {product} {postfix} from {shop_name}, {mid}, {emotion} aur perfect he {keyword} ke liye. {emoji} {ender}",
+            f"{starter} {shop_name} ({area}) se {product} {postfix}, {emotion}, {mid}, perfect he {keyword} ke liye. {emoji} {ender}"
+        ])
     elif lang == "gu":
         starter = random.choice(starters_gu)
         ender = random.choice(enders_gu)
         mid = random.choice(mid_phrases_gu)
         emotion = random.choice(emotions_gu)
-        review = f"{starter} {area} mathi {product} {postfix} from {shop_name}, {mid}, {emotion} ane {keyword} mate ekdam perfect. {emoji} {ender}"
-    
-    return review.strip()
+        review = random.choice([
+            f"{starter} {area} mathi {product} {postfix} from {shop_name}, {mid}, {emotion} ane {keyword} mate ekdam perfect. {emoji} {ender}",
+            f"{starter} {shop_name} {area} mathi {product} {postfix}, {emotion}, {mid}. {emoji} {ender}"
+        ])
 
-# ------------------
-# Main Loop
-# ------------------
+    # SEO line in English only
+    if random.random() < 0.5:
+        return f"{seo_line} {review}".strip()
+    else:
+        return f"{review} {seo_line}".strip()
+
+# --- Generate All Reviews ---
 reviews_set = set()
-N = 500  # Number of reviews to generate
-
+N = 500
 while len(reviews_set) < N:
     lang = random.choice(["hi", "gu", "en"])
     product = random.choice(products)
@@ -117,19 +130,17 @@ while len(reviews_set) < N:
     if lang == "en" and paraphrasing_enabled and random.random() > 0.5:
         try:
             review = paraphraser(review, max_length=60, num_return_sequences=1)[0]['generated_text']
-        except Exception:
+        except:
             pass
 
     reviews_set.add(review)
 
-# ------------------
-# Output
-# ------------------
+# --- Save to reviews.js ---
 with open("reviews.js", "w", encoding="utf-8") as f:
     f.write("const reviews = [\n")
     for r in sorted(reviews_set):
-        escaped_review = r.replace('"', '\\"')
-        f.write(f'"{escaped_review}",\n')
-    f.write("];")
+        escaped = r.replace('"', '\\"')
+        f.write(f'"{escaped}",\n')
+    f.write("];\n")
 
-print(f"✅ Generated {len(reviews_set)} reviews and saved to reviews.js")
+print(f"✅ Generated {len(reviews_set)} SEO-enhanced reviews and saved to reviews.js")
