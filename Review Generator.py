@@ -77,7 +77,7 @@ def generate_review(lang, product, area, emoji, keyword):
     postfix = product_postfix[product][lang] if lang in ["hi", "gu"] else ""
     
     # Randomly choose the shop name
-    shop_name = random.choice(["HK Factory Outlet", "VethiQ Luxury"])
+    shop_name = random.choice(["HK Factory Outlet"])
     
     if lang == "en":
         starter = random.choice(starters_en)
